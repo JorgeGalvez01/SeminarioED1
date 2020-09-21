@@ -21,9 +21,17 @@ void capturarValores(){
       printf("El promedio de los 5 numeros es %.2f \n", promedio);
 }
 
+void mostrar(int n, char cadena[20]){
+    for (indice = 0; indice < n; indice++)
+        printf("%s", cadena);
+    
+}
+
 int main(){
 
     int opcion;
+    int n;
+    char cadena[20];
 
     do{
         printf("1. Capturar enteros\n");
@@ -38,7 +46,16 @@ int main(){
         case 1:
             capturarValores();
             break;
-        
+        case 2:
+            printf("Escribe una cadena de hasta 20 caracteres: ");
+            fflush(stdin);
+            fgets(cadena, sizeof(cadena), stdin);
+            printf("cuantas veces quieres que se repita la cadena?: ");
+            scanf("%d", &n);
+
+            mostrar(n, cadena);
+
+            break;   
         default:
             break;
         }
