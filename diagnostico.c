@@ -35,6 +35,26 @@ void mostrar(int n, char cadena[20]){
     
 }
 
+void capturarDatosDelPersonaje(){
+    for (indice = 0; indice < 5; indice++){
+        printf("Introduce el nombre del personaje %d\n", (indice + 1));
+        scanf ("%s",&personajes[indice].nombre);
+        printf("Introduce el tipo del personaje %d\n", (indice + 1));
+        scanf ("%s",&personajes[indice].tipo);
+        printf("Introduce los puntos de fuerza del personaje %d\n", (indice + 1));
+        scanf ("%d",&personajes[indice].fuerza);
+        printf("Introduce los puntos de salud del personaje %d\n", (indice + 1));
+        scanf ("%d",&personajes[indice].salud);    
+    }
+
+    for (indice = 0; indice < 5; indice++){
+        printf("\n Nombre del personaje %d: %s\n",(indice + 1), personajes[indice].nombre);
+        printf("Tipo: %s\n",personajes[indice].tipo);
+        printf("Fuerza: %d\n",personajes[indice].fuerza);
+        printf("Salud: %d\n",personajes[indice].salud);
+    }
+}
+
 int main(){
 
     int opcion;
@@ -64,9 +84,10 @@ int main(){
             break;
 
         case 3:
-
+            capturarDatosDelPersonaje();
             break;   
         default:
+            printf("Opcion invalida\n");
             break;
         }
     }while (opcion != 0);
