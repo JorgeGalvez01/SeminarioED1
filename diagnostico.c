@@ -2,6 +2,14 @@
 
 int indice;
 
+struct personaje
+{
+  char nombre [30];
+  char tipo [30];
+  int fuerza;
+  int salud;
+} personajes[5];
+
 void capturarValores(){
     int valores [5];
     for ( indice = 0; indice < 5; indice++)
@@ -52,8 +60,10 @@ int main(){
             fgets(cadena, sizeof(cadena), stdin);
             printf("cuantas veces quieres que se repita la cadena?: ");
             scanf("%d", &n);
-
             mostrar(n, cadena);
+            break;
+
+        case 3:
 
             break;   
         default:
